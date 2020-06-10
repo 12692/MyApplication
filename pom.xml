@@ -28,6 +28,25 @@
 				<configuration>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>${mule.maven.plugin.version}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com/</uri>
+						<muleVersion>${app.runtime}</muleVersion>
+						<username>${username}</username>
+						<password>${password}</password>   							        
+						<applicationName>${project.artifactId}-myappln</applicationName>
+						<environment>${environment}</environment>
+						<workerType>${workerType}</workerType>
+						<workers> ${workers} </workers>
+						<region> ${region} </region>
+					</cloudHubDeployment>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
